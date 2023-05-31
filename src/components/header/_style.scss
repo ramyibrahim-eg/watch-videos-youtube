@@ -1,0 +1,110 @@
+@import "../../index.scss";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1rem 3rem;
+
+  background-color: $black-primary;
+
+  height: fit-content;
+  width: 100%;
+
+  position: sticky;
+  top: 0;
+
+  z-index: 999;
+  &__menu {
+    display: none;
+  }
+  &__logo {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    display: block;
+    cursor: pointer;
+  }
+
+  form {
+    flex: 0.6;
+    display: flex;
+    padding: 0.1rem;
+    margin: 0 1rem;
+    border-radius: 5rem;
+    border: 1.2px solid;
+    background-color: $black-secondary;
+
+    input {
+      width: 100%;
+      border: none;
+      font-weight: 500;
+      background: transparent;
+      padding: 0.3rem 0.5rem;
+      color: $text-color;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    button {
+      padding: 0 0.5rem;
+      color: $text-color;
+      background: transparent;
+      border: none;
+      &:focus {
+        border: none;
+      }
+    }
+  }
+
+  &__icons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
+    img {
+      border-radius: 50%;
+      width: 40px;
+      object-fit: contain;
+      margin-right: 5px;
+      cursor: pointer;
+      background: #fff;
+    }
+    a {
+      text-decoration: none;
+      color: #b1bdb4;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-small) {
+  .header {
+    padding: 1rem;
+
+    form {
+      flex: 1;
+    }
+
+    &__menu {
+      display: block;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-medium) {
+  .header__icons {
+    svg {
+      display: none;
+    }
+    div {
+      display: flex;
+      align-items: center;
+    }
+    span {
+      display: none;
+    }
+  }
+}
